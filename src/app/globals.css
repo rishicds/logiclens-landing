@@ -25,3 +25,9 @@ body {
     text-wrap: balance;
   }
 }
+@layer base {
+  @font-face {
+    font-family: 'Contrail';
+    src: url('fonts/Cubano.ttf') format('opentype');
+  }
+}

@@ -5,27 +5,41 @@ import { FiArrowUpRight } from "react-icons/fi";
 export const TextParallaxContentExample = () => {
   return (
     <div className="bg-black pt-4">
-    <h2>OUR FEATURES</h2>
+      <h2 className="text-7xl px-4 py-8 text-center  font-extrabold text-white">INDUSTRIES WE OFFER</h2>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        subheading="Collaborate"
-        heading="Built for all of us."
+        imgUrl="https://images.unsplash.com/photo-1579852592422-dd5f443ecac1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        subheading="Factories"
+        heading="Smart Surveillance for Factories"
       >
-        <ExampleContent />
+        <ExampleContent industry="factories" />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        subheading="Quality"
-        heading="Never compromise."
+        imgUrl="https://images.unsplash.com/photo-1522684462852-01b24e76b77d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        subheading="Retail Outlets"
+        heading="Secure Retail Environments"
       >
-        <ExampleContent />
+        <ExampleContent industry="retail outlets" />
       </TextParallaxContent>
       <TextParallaxContent
         imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        subheading="Modern"
-        heading="Dress for the best."
+        subheading="Offices"
+        heading="AI-Powered Office Monitoring"
       >
-        <ExampleContent />
+        <ExampleContent industry="offices" />
+      </TextParallaxContent>
+      <TextParallaxContent
+        imgUrl="https://images.unsplash.com/photo-1664382953403-fc1ac77073a0?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        subheading="Warehouses"
+        heading="CCTV Solutions for Warehouses"
+      >
+        <ExampleContent industry="warehouses" />
+      </TextParallaxContent>
+      <TextParallaxContent
+        imgUrl="https://images.unsplash.com/photo-1606414761913-5ece30a5f1b1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        subheading="Custom Requirements"
+        heading="Tailored AI/ML CCTV Solutions"
+      >
+        <ExampleContent industry="custom requirements" />
       </TextParallaxContent>
     </div>
   );
@@ -126,21 +140,19 @@ const OverlayCopy = ({
   );
 };
 
-const ExampleContent = () => (
+const ExampleContent = ({ industry }: { industry: string }) => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
     <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
-      Additional content explaining the above card here
+      AI/ML-Powered CCTV Solutions for {industry}
     </h2>
     <div className="col-span-1 md:col-span-8">
       <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-        blanditiis soluta eius quam modi aliquam quaerat odit deleniti minima
-        maiores voluptate est ut saepe accusantium maxime doloremque nulla
-        consectetur possimus.
+        We provide cutting-edge security solutions designed for {industry}. 
+        Our AI/ML-powered CCTV systems ensure safety and real-time monitoring with advanced analytics.
       </p>
       <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-        reiciendis blanditiis aliquam aut fugit sint.
+        Whether it&apos;s automating monitoring in factories or ensuring safety in retail outlets, 
+        our solutions are tailored to your unique needs.
       </p>
       <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
         Learn more <FiArrowUpRight className="inline" />

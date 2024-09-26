@@ -3,13 +3,14 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { useAnimate, motion, AnimationScope } from "framer-motion";
 import { FiMenu, FiArrowUpRight } from "react-icons/fi";
 import useMeasure from "react-use-measure";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <>
       <GlassNavigation />
 
-      <span className="absolute -top-[600px] left-[50%] h-[800px] w-4/5 max-w-3xl -translate-x-[50%] rounded bg-neutral-900" />
+      <span className="absolute  w-4/5 max-w-3xl -translate-x-[50%] rounded bg-neutral-900" />
       </>
   );
 };
@@ -22,6 +23,7 @@ const GlassNavigation = () => {
   const navRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseMove = ({ offsetX, offsetY, target }: MouseEvent) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const isNavElement = [...target.classList].includes("glass-nav");
 
@@ -73,6 +75,7 @@ const Cursor = ({
   scope,
 }: {
   hovered: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   scope: AnimationScope<any>;
 }) => {
   return (
@@ -94,32 +97,33 @@ const Cursor = ({
 };
 
 const Logo = () => (
-  <span className="pointer-events-none relative left-0 top-[50%] z-10 text-4xl font-black text-white mix-blend-overlay md:absolute md:left-[50%] md:-translate-x-[50%] md:-translate-y-[50%]">
+  <span className="pointer-events-none relative left-0 top-[50%] z-10 text-4xl font-black font-sans text-white mix-blend-overlay md:absolute md:left-[50%] md:-translate-x-[50%] md:-translate-y-[50%]">
     LogicLens
   </span>
 );
 
 const Links = () => (
   <div className="hidden items-center gap-2 md:flex">
-    <GlassLink text="Products" />
-    <GlassLink text="Team" />
-    <GlassLink text="Contact" />
+    <GlassLink text="About Us" href="/about" />
+    <GlassLink text="Products" href="/products" />
+    <GlassLink text="Contact" href="/contact" />
   </div>
 );
 
-const GlassLink = ({ text }: { text: string }) => {
+const GlassLink = ({ text, href }: { text: string; href: string }) => {
   return (
-    <a
-      href="#"
+    <Link
+      href={href}
       className="group relative scale-100 overflow-hidden rounded-lg px-4 py-2 transition-transform hover:scale-105 active:scale-95"
     >
       <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
         {text}
       </span>
-      <span className="absolute inset-0 z-0 bg-gradient-to-br from-white/20 to-white/5 opacity-0 transition-opacity group-hover:opacity-100" />
-    </a>
+      
+    </Link>
   );
 };
+
 
 const TextLink = ({ text }: { text: string }) => {
   return (
@@ -176,7 +180,7 @@ const MobileMenu = ({ menuOpen }: { menuOpen: boolean }) => {
       <div ref={ref} className="flex items-center justify-between px-4 pb-4">
         <div className="flex items-center gap-4">
           <TextLink text="Products" />
-          <TextLink text="History" />
+          <TextLink text="About Us" />
           <TextLink text="Contact" />
         </div>
         <SignInButton />
