@@ -2,7 +2,6 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
 import {
-  SiAtlassian,
   SiDribbble,
   SiGrubhub,
   SiKaggle,
@@ -154,7 +153,7 @@ const Card = ({
     >
       <Icon className="text-7xl mx-auto" />
       <p className="text-lg lg:text-xl font-light italic my-8">
-        "{description}"
+        &apos;{description}&apos;
       </p>
       <div>
         <span className="block font-semibold text-lg">{name}</span>

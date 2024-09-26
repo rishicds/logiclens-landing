@@ -40,7 +40,7 @@ export function Awards() {
             Incubated at IIM Lucknow
           </h2>
           <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-            Proud to be incubated at one of India's premier management institutes, fostering innovation and entrepreneurship
+            Proud to be incubated at one of India&apos;s premier management institutes, fostering innovation and entrepreneurship
           </p>
         </div>
         <Image

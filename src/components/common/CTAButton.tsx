@@ -92,7 +92,7 @@ import {
               href="#circlePath"
               className="fill-white text-[10px] font-light uppercase opacity-100 transition-all duration-700 ease-out group-hover:fill-black group-hover:opacity-100"
             >
-               Contact us to reinvigorate your company's security
+               Contact us to reinvigorate your company&apos;s security
             </textPath>
           </text>
         </motion.svg>
