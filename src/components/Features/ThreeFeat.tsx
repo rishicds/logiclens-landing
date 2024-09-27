@@ -1,11 +1,11 @@
-import React, { ReactNode, useRef } from "react";
+import React, { ReactNode, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiX } from "react-icons/fi";
 
 export const TextParallaxContentExample = () => {
   return (
     <div className="bg-black pt-4">
-      <h2 className="text-7xl px-4 py-8 text-center  font-extrabold text-white">INDUSTRIES WE OFFER</h2>
+      <h2 className="text-7xl px-4 py-8 text-center font-extrabold text-white">INDUSTRIES WE OFFER</h2>
       <TextParallaxContent
         imgUrl="https://images.unsplash.com/photo-1579852592422-dd5f443ecac1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="Factories"
@@ -140,23 +140,54 @@ const OverlayCopy = ({
   );
 };
 
-const ExampleContent = ({ industry }: { industry: string }) => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-    <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
-      AI/ML-Powered CCTV Solutions for {industry}
-    </h2>
-    <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-        We provide cutting-edge security solutions designed for {industry}. 
-        Our AI/ML-powered CCTV systems ensure safety and real-time monitoring with advanced analytics.
-      </p>
-      <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-        Whether it&apos;s automating monitoring in factories or ensuring safety in retail outlets, 
-        our solutions are tailored to your unique needs.
-      </p>
-      <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
-        Learn more <FiArrowUpRight className="inline" />
-      </button>
+const ExampleContent = ({ industry }: { industry: string }) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const popupContent = {
+    factories: "Logiclens offers cutting-edge video analytics solutions tailored for factories to boost safety, security, and operational efficiency. Our technology leverages AI-driven analytics to monitor production lines, detect equipment anomalies, and ensure compliance with safety protocols. With real-time alerts and detailed insights, factory managers can proactively address potential issues such as equipment malfunctions or safety hazards, reducing downtime and preventing accidents. Our solution also provides intelligent surveillance to monitor restricted areas and identify unauthorized access, ensuring the security of assets and personnel. By integrating with existing CCTV infrastructure, Logiclens delivers a seamless, scalable, and cost-effective solution for enhancing operational visibility and decision-making in industrial environments. Empower your factory with actionable intelligence and stay ahead in the era of smart manufacturing.",
+    "retail outlets": "Logiclens provides advanced video analytics solutions for the retail sector, designed to enhance security, optimize operations, and improve customer experience. Our AI-powered technology enables retailers to monitor store activity in real-time, detecting suspicious behavior such as shoplifting or unauthorized access to restricted areas. Beyond security, our solution offers valuable insights into customer behavior, such as foot traffic patterns and dwell times, helping store managers optimize product placement and staffing levels. With features like real-time alerts and detailed analytics reports, retailers can make data-driven decisions to improve store layout, enhance loss prevention strategies, and deliver a more personalized shopping experience. Integrated seamlessly with existing CCTV systems, Logiclens offers a scalable, cost-effective way to transform retail surveillance into a powerful tool for business growth and security.",
+    offices: "Logiclens offers state-of-the-art video analytics solutions for offices, enhancing security and operational efficiency. Our AI-driven technology monitors office spaces in real-time, providing instant alerts for unauthorized access, potential security breaches, and safety hazards. In addition to bolstering security, our solution helps optimize workplace management by monitoring occupancy levels, tracking employee movements, and identifying underutilized areas. This data empowers facility managers to improve space utilization, reduce energy costs, and ensure a safe and compliant work environment. By integrating seamlessly with existing CCTV infrastructure, Logiclens delivers a cost-effective, scalable solution to transform office surveillance into a strategic tool for enhancing safety, security, and productivity.",
+    warehouses: "Logiclens provides advanced video analytics solutions specifically designed for warehouse environments, enhancing both security and operational efficiency. Our AI-driven technology monitors warehouse activities in real-time, detecting security threats such as unauthorized access, theft, and tampering. Beyond security, our solution helps streamline operations by tracking inventory movements, monitoring loading and unloading processes, and ensuring compliance with safety protocols. With features like real-time alerts and detailed analytics reports, warehouse managers can proactively address issues, minimize downtime, and prevent accidents. By integrating seamlessly with IP CCTV systems, Logiclens offers a scalable, cost-effective solution to transform traditional warehouse surveillance into a powerful tool for safeguarding assets, improving productivity, and optimizing resource management.",
+    "custom requirements": "Logiclens offers tailored video analytics solutions designed to meet the specific needs of diverse industries and unique operational challenges. Our customizable AI-powered technology can detect a wide range of behaviors, such as loitering, crowd formation, and unusual movement patterns, providing actionable insights for specialized scenarios. Whether it’s monitoring restricted areas, identifying suspicious activities, or ensuring compliance with industry-specific safety protocols, our solutions are adaptable to various environments, including factories, retail, offices, and warehouses. We collaborate closely with our clients to develop custom detection models for special use cases like PPE compliance, occupancy management, or customer behavior analysis. With Logiclens, organizations can leverage intelligent surveillance to enhance security, operational efficiency, and decision-making, transforming their video data into a powerful tool for addressing specific needs and driving business success."
+  };
+
+  return (
+    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
+      <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
+        AI/ML-Powered CCTV Solutions for {industry}
+      </h2>
+      <div className="col-span-1 md:col-span-8">
+        <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
+          We provide cutting-edge security solutions designed for {industry}. 
+          Our AI/ML-powered CCTV systems ensure safety and real-time monitoring with advanced analytics.
+        </p>
+        <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
+          Whether it's automating monitoring in factories or ensuring safety in retail outlets, 
+          our solutions are tailored to your unique needs.
+        </p>
+        <button 
+          onClick={() => setIsPopupOpen(true)} 
+          className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit"
+        >
+          Learn more <FiArrowUpRight className="inline" />
+        </button>
+      </div>
+      {isPopupOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-black rounded-lg p-8 max-w-md w-full relative">
+            <button 
+              onClick={() => setIsPopupOpen(false)}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+            >
+              <FiX size={24} />
+            </button>
+            <h3 className="text-lg text-white font-semibold mb-2">AI/ML CCTV Solutions for {industry}</h3>
+            <p className=" text-white">{popupContent[industry]}</p>
+          </div>
+        </div>
+      )}
     </div>
-  </div>
-);
+  );
+};
+
+export default TextParallaxContentExample;

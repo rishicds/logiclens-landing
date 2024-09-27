@@ -54,7 +54,8 @@ export const SparklesCore = (props: ParticlesProps) => {
   return (
     <motion.div animate={controls} className={cn("opacity-0", className)}>
          <h2 className="pl-20 pr-20 text-l pt-4 absolute z-10 text-white">
-        We are a bunch of cool people. Yes, that&apos;s what we are. Other than that, a team of ultra passionate people of what we do. Logiclens boasts a team of young, talented professionals, including Machine Learning Engineers & people from vibrant backgrounds.
+         At Logiclens, we are redefining the way organizations see their world through the lens of innovation and intelligence. Founded with a vision to transform traditional surveillance into a powerful tool for safety, security, and operational excellence, we specialize in providing cutting-edge video analytics solutions that empower businesses across various industries.
+
       </h2>
       {init && (
         <Particles
