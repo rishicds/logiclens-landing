@@ -143,7 +143,7 @@ const OverlayCopy = ({
 const ExampleContent = ({ industry }: { industry: string }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const popupContent = {
+  const popupContent: { [key: string]: string } = {
     factories: "Logiclens offers cutting-edge video analytics solutions tailored for factories to boost safety, security, and operational efficiency. Our technology leverages AI-driven analytics to monitor production lines, detect equipment anomalies, and ensure compliance with safety protocols. With real-time alerts and detailed insights, factory managers can proactively address potential issues such as equipment malfunctions or safety hazards, reducing downtime and preventing accidents. Our solution also provides intelligent surveillance to monitor restricted areas and identify unauthorized access, ensuring the security of assets and personnel. By integrating with existing CCTV infrastructure, Logiclens delivers a seamless, scalable, and cost-effective solution for enhancing operational visibility and decision-making in industrial environments. Empower your factory with actionable intelligence and stay ahead in the era of smart manufacturing.",
     "retail outlets": "Logiclens provides advanced video analytics solutions for the retail sector, designed to enhance security, optimize operations, and improve customer experience. Our AI-powered technology enables retailers to monitor store activity in real-time, detecting suspicious behavior such as shoplifting or unauthorized access to restricted areas. Beyond security, our solution offers valuable insights into customer behavior, such as foot traffic patterns and dwell times, helping store managers optimize product placement and staffing levels. With features like real-time alerts and detailed analytics reports, retailers can make data-driven decisions to improve store layout, enhance loss prevention strategies, and deliver a more personalized shopping experience. Integrated seamlessly with existing CCTV systems, Logiclens offers a scalable, cost-effective way to transform retail surveillance into a powerful tool for business growth and security.",
     offices: "Logiclens offers state-of-the-art video analytics solutions for offices, enhancing security and operational efficiency. Our AI-driven technology monitors office spaces in real-time, providing instant alerts for unauthorized access, potential security breaches, and safety hazards. In addition to bolstering security, our solution helps optimize workplace management by monitoring occupancy levels, tracking employee movements, and identifying underutilized areas. This data empowers facility managers to improve space utilization, reduce energy costs, and ensure a safe and compliant work environment. By integrating seamlessly with existing CCTV infrastructure, Logiclens delivers a cost-effective, scalable solution to transform office surveillance into a strategic tool for enhancing safety, security, and productivity.",
@@ -162,7 +162,7 @@ const ExampleContent = ({ industry }: { industry: string }) => {
           Our AI/ML-powered CCTV systems ensure safety and real-time monitoring with advanced analytics.
         </p>
         <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-          Whether it's automating monitoring in factories or ensuring safety in retail outlets, 
+          Whether it&apos;s automating monitoring in factories or ensuring safety in retail outlets, 
           our solutions are tailored to your unique needs.
         </p>
         <button 

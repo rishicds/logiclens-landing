@@ -33,11 +33,11 @@ export function OurCompany() {
 
         </p>
         <p className="text-lg font-semibold">
-        Our journey began with a simple yet profound belief: that technology should not just watch, but understand. Driven by this passion, we harness the power of artificial intelligence to turn ordinary camera systems into smart, proactive guardians. Whether it's enhancing safety in factories, optimizing operations in warehouses, securing office spaces, or providing bespoke solutions for unique use cases, our AI-powered solutions deliver actionable insights that make a real difference.
+        Our journey began with a simple yet profound belief: that technology should not just watch, but understand. Driven by this passion, we harness the power of artificial intelligence to turn ordinary camera systems into smart, proactive guardians. Whether it&apos;s enhancing safety in factories, optimizing operations in warehouses, securing office spaces, or providing bespoke solutions for unique use cases, our AI-powered solutions deliver actionable insights that make a real difference.
 
         </p>
         <p className="text-lg font-semibold">
-        We are a team of innovators, engineers, and dreamers who are dedicated to pushing the boundaries of what’s possible with video analytics. We listen, we adapt, and we innovate to meet the evolving needs of our clients. At Logiclens, we believe that every organization has a unique story, and our mission is to help them see that story unfold more clearly, securely, and efficiently.
+        We are a team of innovators, engineers, and dreamers who are dedicated to pushing the boundaries of what&apos;s possible with video analytics. We listen, we adapt, and we innovate to meet the evolving needs of our clients. At Logiclens, we believe that every organization has a unique story, and our mission is to help them see that story unfold more clearly, securely, and efficiently.
 
         </p>
         <p className="text-lg font-semibold">
