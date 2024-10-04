@@ -15,59 +15,63 @@ export const DarkGradientPricing = () => {
       <div className="relative z-10 mx-auto max-w-5xl px-4 py-20 md:px-8">
         <div className="mb-12 space-y-3">
           <h2 className="text-center text-3xl font-semibold leading-tight sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-            Pricing
+            Our Pricing
           </h2>
           <p className="text-center text-base text-zinc-400 md:text-lg">
-            Use it for free for yourself, upgrade when your team needs advanced
-            control.
+            Choose the best solution for your needs, starting with a free trial.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {/* Free Trial */}
           <PriceCard
-            tier="Free"
-            price="$0/mo"
-            bestFor="Best for 1-5 users"
-            CTA={<GhostButton className="w-full">Get started free</GhostButton>}
+            tier="Free Trial"
+            price="Rs.0"
+            bestFor="1 Camera, 1 Use Case"
+            CTA={<GhostButton className="w-full">Start Free Trial</GhostButton>}
             benefits={[
-              { text: "One workspace", checked: true },
-              { text: "Email support", checked: true },
-              { text: "1 day data retention", checked: false },
-              { text: "Custom roles", checked: false },
-              { text: "Priority support", checked: false },
-              { text: "SSO", checked: false },
+              { text: "1 Camera", checked: true },
+              { text: "1 Detection Use Case", checked: true },
+              { text: "Basic Reporting", checked: false },
+              { text: "Priority Support", checked: false },
+              { text: "Advanced Analytics", checked: false },
+              { text: "Custom Integrations", checked: false },
             ]}
           />
+
+          {/* Out of the Box */}
           <PriceCard
-            tier="Pro"
-            price="$79/mo"
-            bestFor="Best for 5-50 users"
+            tier="Out of the Box"
+            price="RsXXXX/mo"
+            bestFor="Multi Cams, Simple Detections"
             CTA={
               <GhostButton className="w-full bg-zinc-50 text-zinc-950 hover:bg-zinc-200 hover:text-zinc-900">
-                14-day free trial
+                14-Day Free Trial
               </GhostButton>
             }
             benefits={[
-              { text: "Five workspaces", checked: true },
-              { text: "Email support", checked: true },
-              { text: "7 day data retention", checked: true },
-              { text: "Custom roles", checked: true },
-              { text: "Priority support", checked: false },
-              { text: "SSO", checked: false },
+              { text: "Up to 5 Cameras", checked: true },
+              { text: "Simple Detections (e.g., Object Detection)", checked: true },
+              { text: "Basic Reporting", checked: true },
+              { text: "Priority Support", checked: false },
+              { text: "Advanced Analytics", checked: false },
+              { text: "Custom Integrations", checked: false },
             ]}
           />
+
+          {/* Custom Solution */}
           <PriceCard
-            tier="Enterprise"
-            price="Contact us"
-            bestFor="Best for 50+ users"
-            CTA={<GhostButton className="w-full">Contact us</GhostButton>}
+            tier="Custom Solution"
+            price="Contact Us"
+            bestFor="Advanced Detections, Large Setup"
+            CTA={<GhostButton className="w-full">Contact Us</GhostButton>}
             benefits={[
-              { text: "Unlimited workspaces", checked: true },
-              { text: "Email support", checked: true },
-              { text: "30 day data retention", checked: true },
-              { text: "Custom roles", checked: true },
-              { text: "Priority support", checked: true },
-              { text: "SSO", checked: true },
+              { text: "Unlimited Cameras", checked: true },
+              { text: "Advanced Detections (e.g., Facial Recognition)", checked: true },
+              { text: "Full Analytics and Reporting", checked: true },
+              { text: "Priority Support", checked: true },
+              { text: "Custom Integrations", checked: true },
+              { text: "No Trial", checked: true },
             ]}
           />
         </div>
@@ -81,7 +85,7 @@ const PriceCard = ({ tier, price, bestFor, CTA, benefits }: PriceCardProps) => {
     <Card>
       <div className="flex flex-col items-center border-b border-zinc-700 pb-6">
         <span className="mb-6 inline-block text-zinc-50">{tier}</span>
-        <span className="mb-3 inline-block text-4xl font-medium ">{price}</span>
+        <span className="mb-3 inline-block text-4xl font-medium">{price}</span>
         <span className="bg-gradient-to-br from-zinc-200 to-zinc-500 bg-clip-text text-center text-transparent">
           {bestFor}
         </span>
@@ -176,4 +180,4 @@ type BenefitType = {
 type GhostButtonProps = {
   children: ReactNode;
   className?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>; 
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;

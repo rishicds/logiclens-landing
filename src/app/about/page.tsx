@@ -3,7 +3,7 @@ import { AboutHero } from '@/components/AboutUs/AboutHero'
 import { Awards } from '@/components/AboutUs/Awards'
 import { OurCompany } from '@/components/AboutUs/OurCompany'
 import StackedCardTestimonials from '@/components/AboutUs/Testimonials'
-import MagnetButtonExample from '@/components/common/CTAButton'
+import WhatsAppFloatButton from '@/components/common/CTAButton'
 import React from 'react'
 
 const page = () => {
@@ -14,7 +14,7 @@ const page = () => {
     <h1 className='text-6xl text-center font-extrabold p-8'> Awards and Certifications</h1>
     <Awards/>
     <div className='x-100'>
-    <MagnetButtonExample/>
+    <WhatsAppFloatButton phoneNumber="1234567890"/>
     </div>
     <h1 className='text-6xl text-center font-extrabold p-8'> Our Clients</h1>
     <StackedCardTestimonials/>

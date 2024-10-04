@@ -98,7 +98,7 @@ const Cursor = ({
 
 const Logo = () => (
   <span className="pointer-events-none relative left-0 top-[50%] z-10 text-4xl font-black font-sans text-white mix-blend-overlay md:absolute md:left-[50%] md:-translate-x-[50%] md:-translate-y-[50%]">
-    LogicLens
+    
   </span>
 );
 
@@ -143,9 +143,12 @@ const Buttons = ({
       <SignInButton />
     </div>
 
-    <button className="relative scale-100 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-600 from-40% to-indigo-400 px-4 py-2 font-medium text-white transition-transform hover:scale-105 active:scale-95">
-      Try free
-    </button>
+    <button
+  className="relative scale-100 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-600 from-40% to-indigo-400 px-4 py-2 font-medium text-white transition-transform hover:scale-105 active:scale-95"
+  onClick={() => window.scrollBy({ top: 12840, behavior: 'smooth' })}
+>
+  Try free
+</button>
 
     <button
       onClick={() => setMenuOpen((pv) => !pv)}

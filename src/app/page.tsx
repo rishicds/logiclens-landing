@@ -1,11 +1,10 @@
 "use client"
 
-import MagnetButtonExample from "@/components/common/CTAButton";
+import WhatsAppFloatButton from "@/components/common/CTAButton";
 import { GoogleGeminiEffectDemo } from "@/components/CTA/GeminiCTA";
 import { TextParallaxContentExample } from "@/components/Features/ThreeFeat";
 import { AuroraHero } from "@/components/Hero/Hero";
 import { DarkGradientPricing } from "@/components/Hero/Pricing";
-import { CountUpStats } from "@/components/Stats/Stats";
 
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
    <TextParallaxContentExample/>
    <GoogleGeminiEffectDemo/>
    <DarkGradientPricing/>
-   <MagnetButtonExample/>
-   <CountUpStats/></>
+   <WhatsAppFloatButton phoneNumber="1234567890"/>
+   </>
   );
 }
