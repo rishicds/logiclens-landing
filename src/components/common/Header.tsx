@@ -104,9 +104,10 @@ const Logo = () => (
 
 const Links = () => (
   <div className="hidden items-center gap-2 md:flex">
+    <GlassLink text="Home" href="/" />
     <GlassLink text="About Us" href="/about" />
     <GlassLink text="Products" href="/products" />
-    <GlassLink text="Contact" href="/contact" />
+    
   </div>
 );
 

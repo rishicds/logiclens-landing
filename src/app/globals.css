@@ -31,3 +31,12 @@ body {
     src: url('fonts/Cubano.ttf') format('opentype');
   }
 }
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 10px #00FFFF; }
+  50% { text-shadow: 0 0 10px #00FFFF, 0 0 10px #00FFFF, 0 0 20px #00FFFF; }
+}
+
+.glow {
+  animation: glow 1.5s ease-in-out infinite;
+}

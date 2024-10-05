@@ -8,14 +8,14 @@ export const TextParallaxContentExample = () => {
     <div className="bg-black pt-4">
       <h2 className="text-7xl px-4 py-8 text-center font-extrabold text-white">INDUSTRIES WE OFFER</h2>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1579852592422-dd5f443ecac1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        imgUrl="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExenl1MTFmZ2w0MWxrNXo3cnZxMXA0dmtxZ2ZqMXF1Mjdxb2g0NHNkbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RiISl1mBw3G5ToCkjy/giphy.gif"
         subheading="Factories"
         heading="Smart Surveillance for Factories"
       >
         <ExampleContent industry="factories" />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1522684462852-01b24e76b77d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        imgUrl="https://media1.tenor.com/m/3cIAOjwJhpUAAAAC/retail-big-retail.gif"
         subheading="Retail Outlets"
         heading="Secure Retail Environments"
       >
@@ -157,7 +157,7 @@ const ExampleContent = ({ industry }: { industry: string }) => {
     offices: "Logiclens offers state-of-the-art video analytics solutions for offices, enhancing security and operational efficiency. Our AI-driven technology monitors office spaces in real-time, providing instant alerts for unauthorized access, potential security breaches, and safety hazards. In addition to bolstering security, our solution helps optimize workplace management by monitoring occupancy levels, tracking employee movements, and identifying underutilized areas. This data empowers facility managers to improve space utilization, reduce energy costs, and ensure a safe and compliant work environment. By integrating seamlessly with existing CCTV infrastructure, Logiclens delivers a cost-effective, scalable solution to transform office surveillance into a strategic tool for enhancing safety, security, and productivity.",
     warehouses: "Logiclens provides advanced video analytics solutions specifically designed for warehouse environments, enhancing both security and operational efficiency. Our AI-driven technology monitors warehouse activities in real-time, detecting security threats such as unauthorized access, theft, and tampering. Beyond security, our solution helps streamline operations by tracking inventory movements, monitoring loading and unloading processes, and ensuring compliance with safety protocols. With features like real-time alerts and detailed analytics reports, warehouse managers can proactively address issues, minimize downtime, and prevent accidents. By integrating seamlessly with IP CCTV systems, Logiclens offers a scalable, cost-effective solution to transform traditional warehouse surveillance into a powerful tool for safeguarding assets, improving productivity, and optimizing resource management.",
     "custom requirements": "Logiclens offers tailored video analytics solutions designed to meet the specific needs of diverse industries and unique operational challenges. Our customizable AI-powered technology can detect a wide range of behaviors, such as loitering, crowd formation, and unusual movement patterns, providing actionable insights for specialized scenarios. Whether it's monitoring restricted areas, identifying suspicious activities, or ensuring compliance with industry-specific safety protocols, our solutions are adaptable to various environments, including factories, retail, offices, and warehouses. We collaborate closely with our clients to develop custom detection models for special use cases like PPE compliance, occupancy management, or customer behavior analysis. With Logiclens, organizations can leverage intelligent surveillance to enhance security, operational efficiency, and decision-making, transforming their video data into a powerful tool for addressing specific needs and driving business success.",
-    "societies":"Logiclens offers tailor made society things"
+    "societies":"Logiclens provides advanced video analytics solutions specifically designed for buildings and societies, enhancing both security and operational efficiency. Our AI-driven technology monitors activities in real-time, detecting security threats such as unauthorized access, vandalism, and other suspicious behaviors. Beyond security, our solution streamlines building management by tracking foot traffic, monitoring access points, track entry and exit of vehicles and ensuring compliance with safety protocols. With features like real-time alerts and detailed analytics reports, facility managers can proactively address issues, minimize risks, and enhance overall safety. By integrating seamlessly with existing IP CCTV systems, Logiclens offers a scalable, cost-effective solution that transforms traditional surveillance into a powerful tool for safeguarding assets and improving community well-being."
   };
 
   return (
