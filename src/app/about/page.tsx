@@ -14,7 +14,7 @@ const page = () => {
     <h1 className='text-6xl text-center font-extrabold p-8'> Awards and Certifications</h1>
     <Awards/>
     <div className='x-100'>
-    <WhatsAppFloatButton phoneNumber="1234567890"/>
+    <WhatsAppFloatButton phoneNumber="+917708964718"/>
     </div>
     <h1 className='text-6xl text-center font-extrabold p-8'> Our Clients</h1>
     <StackedCardTestimonials/>

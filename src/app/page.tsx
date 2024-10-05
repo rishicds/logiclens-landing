@@ -13,7 +13,7 @@ export default function Home() {
    <TextParallaxContentExample/>
    <GoogleGeminiEffectDemo/>
    <DarkGradientPricing/>
-   <WhatsAppFloatButton phoneNumber="1234567890"/>
+   <WhatsAppFloatButton phoneNumber="+917708964718"/>
    </>
   );
 }
