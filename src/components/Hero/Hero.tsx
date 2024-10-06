@@ -1,11 +1,14 @@
-"use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { WavyBackground } from "../ui/wavy-background";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export function AuroraHero() {
   const letters = "LOGICLENS".split("");
   const containerRef = useRef(null);
+  const [text, setText] = useState("");
+  const fullText = "Leverage the power of AI to redefine your security";
+  const [index, setIndex] = useState(0);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -14,6 +17,15 @@ export function AuroraHero() {
   const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
   const y = useSpring(useTransform(scrollYProgress, [0, 1], [0, -100]), springConfig);
   const scale = useSpring(useTransform(scrollYProgress, [0, 0.5], [1, 1.2]), springConfig);
+
+  useEffect(() => {
+    if (index < fullText.length) {
+      setTimeout(() => {
+        setText(text + fullText[index]);
+        setIndex(index + 1);
+      }, 50);
+    }
+  }, [index, text]);
 
   return (
     <motion.div ref={containerRef} className="min-h-[150vh] flex items-start justify-center pt-20">
@@ -31,11 +43,15 @@ export function AuroraHero() {
                   ease: [0.6, -0.05, 0.01, 0.99],
                 }}
                 whileHover={{
-                  scale: 1.2,
+                  scale: 1.4,
                   color: "#00FFFF",
+                  textShadow: "0 0 15px #00FFFF",
                   transition: { duration: 0.2 },
                 }}
-                className="inline-block"
+                className="inline-block cursor-pointer transition-all duration-200"
+                style={{
+                  textShadow: "0 0 10px rgba(0, 255, 255, 0.5)",
+                }}
               >
                 {letter}
               </motion.span>
@@ -46,8 +62,11 @@ export function AuroraHero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
+            style={{
+              textShadow: "0 0 8px rgba(255, 255, 255, 0.5)",
+            }}
           >
-            Leverage the power of AI to redefine your security
+            {text}
           </motion.p>
         </motion.div>
       </WavyBackground>
