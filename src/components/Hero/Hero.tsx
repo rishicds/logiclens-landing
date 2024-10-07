@@ -31,7 +31,7 @@ export function AuroraHero() {
     <motion.div ref={containerRef} className="min-h-[150vh] flex items-start justify-center pt-20">
       <WavyBackground className="max-w-4xl mx-auto pb-40 sticky top-20">
         <motion.div style={{ y, scale }}>
-          <div className="text-4xl md:text-6xl lg:text-8xl text-white font-extrabold text-center mb-8">
+          <div className="text-4xl md:text-8xl lg:text-9xl text-white font-extrabold text-center mb-8">
             {letters.map((letter, index) => (
               <motion.span
                 key={index}

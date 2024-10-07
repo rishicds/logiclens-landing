@@ -16,8 +16,7 @@ const WhatsAppFloatButton = ({ phoneNumber }: { phoneNumber: string }) => {
     >
       {isHovered && (
         <div className="mr-4 bg-white text-green-600 px-4 py-2 rounded-lg shadow-lg animate-fadeIn">
-          Contact Us
-        </div>
+          Chat with Us        </div>
       )}
       <button
         onClick={handleClick}

@@ -1,51 +1,57 @@
 import React, { ReactNode, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight, FiChevronUp } from "react-icons/fi";
-import {  AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 export const TextParallaxContentExample = () => {
   return (
     <div className="bg-black pt-4">
       <h2 className="text-7xl px-4 py-8 text-center font-extrabold text-white">INDUSTRIES WE OFFER</h2>
       <TextParallaxContent
-        imgUrl="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExenl1MTFmZ2w0MWxrNXo3cnZxMXA0dmtxZ2ZqMXF1Mjdxb2g0NHNkbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RiISl1mBw3G5ToCkjy/giphy.gif"
+        mediaUrl="https://videos.pexels.com/video-files/4686755/4686755-uhd_2560_1440_24fps.mp4"
+        mediaType="video"
         subheading="Factories"
         heading="Smart Surveillance for Factories"
       >
         <ExampleContent industry="factories" />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://media1.tenor.com/m/3cIAOjwJhpUAAAAC/retail-big-retail.gif"
+        mediaUrl="https://videos.pexels.com/video-files/3723439/3723439-uhd_2732_1440_24fps.mp4"
+        mediaType="video"
         subheading="Retail Outlets"
         heading="Secure Retail Environments"
       >
         <ExampleContent industry="retail outlets" />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        mediaUrl="https://videos.pexels.com/video-files/8347237/8347237-uhd_2560_1440_25fps.mp4"
+        mediaType="video"
         subheading="Offices"
         heading="AI-Powered Office Monitoring"
       >
         <ExampleContent industry="offices" />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://plus.unsplash.com/premium_photo-1664365805083-80ff9ccfde9d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        mediaUrl="https://videos.pexels.com/video-files/856661/856661-hd_1920_1080_25fps.mp4"
+        mediaType="video"
         subheading="Societies"
-        heading="Secure societies"
+        heading="Secure Societies"
       >
         <ExampleContent industry="societies" />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1664382953403-fc1ac77073a0?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        mediaUrl="https://videos.pexels.com/video-files/4294436/4294436-uhd_2560_1440_25fps.mp4"
+        mediaType="video"
         subheading="Warehouses"
         heading="CCTV Solutions for Warehouses"
       >
         <ExampleContent industry="warehouses" />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1606414761913-5ece30a5f1b1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        mediaUrl="https://videos.pexels.com/video-files/18068806/18068806-uhd_2558_1440_24fps.mp4"
+        mediaType="video"
         subheading="Custom Requirements"
-        heading="Tailored AI/ML CCTV Solutions"
+        heading="Tailored AI CCTV Solutions"
       >
         <ExampleContent industry="custom requirements" />
       </TextParallaxContent>
@@ -56,12 +62,14 @@ export const TextParallaxContentExample = () => {
 const IMG_PADDING = 12;
 
 const TextParallaxContent = ({
-  imgUrl,
+  mediaUrl,
+  mediaType,
   subheading,
   heading,
   children,
 }: {
-  imgUrl: string;
+  mediaUrl: string;
+  mediaType: "video" | "image";
   subheading: string;
   heading: string;
   children: ReactNode;
@@ -74,7 +82,7 @@ const TextParallaxContent = ({
       }}
     >
       <div className="relative h-[150vh]">
-        <StickyImage imgUrl={imgUrl} />
+        <StickyMedia mediaUrl={mediaUrl} mediaType={mediaType} />
         <OverlayCopy heading={heading} subheading={subheading} />
       </div>
       {children}
@@ -82,7 +90,7 @@ const TextParallaxContent = ({
   );
 };
 
-const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
+const StickyMedia = ({ mediaUrl, mediaType }: { mediaUrl: string; mediaType: "video" | "image" }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -95,9 +103,6 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
   return (
     <motion.div
       style={{
-        backgroundImage: `url(${imgUrl})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         height: `calc(100vh - ${IMG_PADDING * 2}px)`,
         top: IMG_PADDING,
         scale,
@@ -105,6 +110,26 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
       ref={targetRef}
       className="sticky z-0 overflow-hidden rounded-3xl"
     >
+      {mediaType === "video" ? (
+        <video
+          src={mediaUrl}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover"
+        />
+      ) : (
+        <div
+          style={{
+            backgroundImage: `url(${mediaUrl})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "100%",
+            width: "100%",
+          }}
+        />
+      )}
       <motion.div
         className="absolute inset-0 bg-neutral-950/70"
         style={{
@@ -157,7 +182,7 @@ const ExampleContent = ({ industry }: { industry: string }) => {
     offices: "Logiclens offers state-of-the-art video analytics solutions for offices, enhancing security and operational efficiency. Our AI-driven technology monitors office spaces in real-time, providing instant alerts for unauthorized access, potential security breaches, and safety hazards. In addition to bolstering security, our solution helps optimize workplace management by monitoring occupancy levels, tracking employee movements, and identifying underutilized areas. This data empowers facility managers to improve space utilization, reduce energy costs, and ensure a safe and compliant work environment. By integrating seamlessly with existing CCTV infrastructure, Logiclens delivers a cost-effective, scalable solution to transform office surveillance into a strategic tool for enhancing safety, security, and productivity.",
     warehouses: "Logiclens provides advanced video analytics solutions specifically designed for warehouse environments, enhancing both security and operational efficiency. Our AI-driven technology monitors warehouse activities in real-time, detecting security threats such as unauthorized access, theft, and tampering. Beyond security, our solution helps streamline operations by tracking inventory movements, monitoring loading and unloading processes, and ensuring compliance with safety protocols. With features like real-time alerts and detailed analytics reports, warehouse managers can proactively address issues, minimize downtime, and prevent accidents. By integrating seamlessly with IP CCTV systems, Logiclens offers a scalable, cost-effective solution to transform traditional warehouse surveillance into a powerful tool for safeguarding assets, improving productivity, and optimizing resource management.",
     "custom requirements": "Logiclens offers tailored video analytics solutions designed to meet the specific needs of diverse industries and unique operational challenges. Our customizable AI-powered technology can detect a wide range of behaviors, such as loitering, crowd formation, and unusual movement patterns, providing actionable insights for specialized scenarios. Whether it's monitoring restricted areas, identifying suspicious activities, or ensuring compliance with industry-specific safety protocols, our solutions are adaptable to various environments, including factories, retail, offices, and warehouses. We collaborate closely with our clients to develop custom detection models for special use cases like PPE compliance, occupancy management, or customer behavior analysis. With Logiclens, organizations can leverage intelligent surveillance to enhance security, operational efficiency, and decision-making, transforming their video data into a powerful tool for addressing specific needs and driving business success.",
-    "societies":"Logiclens provides advanced video analytics solutions specifically designed for buildings and societies, enhancing both security and operational efficiency. Our AI-driven technology monitors activities in real-time, detecting security threats such as unauthorized access, vandalism, and other suspicious behaviors. Beyond security, our solution streamlines building management by tracking foot traffic, monitoring access points, track entry and exit of vehicles and ensuring compliance with safety protocols. With features like real-time alerts and detailed analytics reports, facility managers can proactively address issues, minimize risks, and enhance overall safety. By integrating seamlessly with existing IP CCTV systems, Logiclens offers a scalable, cost-effective solution that transforms traditional surveillance into a powerful tool for safeguarding assets and improving community well-being."
+    "societies":"Logiclens provides advanced video analytics solutions specifically designed for buildings and societies, enhancing both security and operational efficiency. Our AI-driven technology monitors activities in real-time, detecting security threats such as unauthorized access, vandalism, and other suspicious behaviors. Beyond security, our solution streamlines building management by tracking foot traffic, monitoring access points, track entry and exit of vehicles and ensuring compliance with safety protocols. With features like real-time alerts and detailed analytics reports, facility managers can proactively address issues, minimize risks, and enhance overall safety. By integrating seamlessly with existing IP CCTV systems, Logiclens offers a scalable, cost-effective solution that transforms traditional surveillance into a powerful tool for safeguarding assets and improving community well-being."
   };
 
   return (

@@ -107,6 +107,7 @@ const Links = () => (
     <GlassLink text="Home" href="/" />
     <GlassLink text="About Us" href="/about" />
     <GlassLink text="Products" href="/products" />
+    <GlassLink text="Contact" href="/contact" />
     
   </div>
 );
