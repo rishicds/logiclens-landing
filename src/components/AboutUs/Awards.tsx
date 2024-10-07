@@ -48,7 +48,7 @@ export function Awards() {
           width={300}
           height={400}
           alt="IIM Lucknow logo"
-          className="absolute -right-10 md:-right-[40%] lg:-right-[0] -bottom-10 object-contain rounded-2xl"
+          className="absolute -right-15 md:-right-[50%] lg:-right-[0] -bottom-1 object-contain rounded-2xl"
         />
       </WobbleCard>
     </div>

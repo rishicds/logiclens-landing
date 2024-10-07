@@ -1,24 +1,16 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
-import { IconType } from "react-icons";
-import {
-  SiDribbble,
-  SiGrubhub,
-  SiKaggle,
-  SiSlack,
-  SiNike,
-} from "react-icons/si";
+
 
 const StackedCardTestimonials = () => {
   const [selected, setSelected] = useState(0);
 
   return (
-    <section className=" text-white py-24 px-4 lg:px-8 grid items-center grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 overflow-hidden">
+    <section className=" text-black py-24 px-4 lg:px-8 grid items-center grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 overflow-hidden">
       <div className="p-4">
-        <h3 className="text-5xl font-semibold">What our customers think</h3>
-        <p className="text-gray-400 my-4">
-          Our clients share their experience with us and how we helped them grow
-          their businesses.
+        <h3 className="text-5xl text-white font-semibold">What our customers think</h3>
+        <p className="text-white my-4">
+          Our clients share their experience with us and how we helped them enhance their security and operations.
         </p>
         <SelectBtns
           numTracks={testimonials.length}
@@ -51,11 +43,11 @@ const SelectBtns = ({
           <button
             key={n}
             onClick={() => setSelected(n)}
-            className="h-1.5 w-full bg-gray-600 relative"
+            className="h-1.5 w-full bg-gray-300 relative"
           >
             {selected === n ? (
               <motion.span
-                className="absolute top-0 left-0 bottom-0 bg-white"
+                className="absolute top-0 left-0 bottom-0 bg-blue-500"
                 initial={{
                   width: "0%",
                 }}
@@ -71,7 +63,7 @@ const SelectBtns = ({
               />
             ) : (
               <span
-                className="absolute top-0 left-0 bottom-0 bg-white"
+                className="absolute top-0 left-0 bottom-0 bg-blue-500"
                 style={{
                   width: selected > n ? "100%" : "0%",
                 }}
@@ -111,7 +103,7 @@ const Cards = ({
 };
 
 const Card = ({
-  Icon,
+  logo,
   description,
   name,
   title,
@@ -125,8 +117,6 @@ const Card = ({
 }) => {
   const scale = position <= selected ? 1 : 1 + 0.015 * (position - selected);
   const offset = position <= selected ? 0 : 95 + (position - selected) * 3;
-  const background = position % 2 ? "black" : "gray-800";
-  const color = position % 2 ? "white" : "black";
 
   return (
     <motion.div
@@ -134,8 +124,6 @@ const Card = ({
       style={{
         zIndex: position,
         transformOrigin: "left bottom",
-        background,
-        color,
       }}
       animate={{
         x: `${offset}%`,
@@ -149,15 +137,15 @@ const Card = ({
         ease: "easeOut",
       }}
       onClick={() => setSelected(position)}
-      className="absolute top-0 left-0 w-full min-h-full p-8 lg:p-12 cursor-pointer flex flex-col justify-between"
+      className="absolute top-0 left-0 w-full min-h-full p-8 lg:p-12 cursor-pointer flex flex-col justify-between bg-white text-black shadow-lg rounded-lg"
     >
-      <Icon className="text-7xl mx-auto" />
+      <img src={logo} alt={`${name} logo`} className="h-16 w-auto mx-auto mb-4" />
       <p className="text-lg lg:text-xl font-light italic my-8">
         &apos;{description}&apos;
       </p>
       <div>
         <span className="block font-semibold text-lg">{name}</span>
-        <span className="block text-sm">{title}</span>
+        <span className="block text-sm text-gray-600">{title}</span>
       </div>
     </motion.div>
   );
@@ -166,7 +154,7 @@ const Card = ({
 export default StackedCardTestimonials;
 
 interface Testimonial {
-  Icon: IconType;
+  logo: string;
   title: string;
   name: string;
   description: string;
@@ -174,38 +162,27 @@ interface Testimonial {
 
 const testimonials = [
   {
-    Icon: SiNike,
-    description:
-      "Minsulate's eco-friendly approach helped us improve our sustainability goals. We couldn't be happier.",
-    name: "Emily Johnson",
-    title: "Product Manager, Minsulate",
+    logo: "images/minsu.jpg",
+    description: "With the help of LogicLens' facial recognition and number plate detection software we are able to monitor the employees and vehicles on our factory helping us solve major issues.",
+    name: "Minsulate Manufacturing Company",
+    title: "Manufacturing Industry",
   },
   {
-    Icon: SiDribbble,
-    description:
-      "Osam Dairy's quality is top-notch, and their team is always responsive to our needs. It's a partnership we cherish.",
-    name: "Rakesh Patel",
-    title: "Operations Manager, Osam Dairy",
+    logo: "/api/placeholder/150/50",
+    description: "With Logiclens Facial Recognition System we are monitoring the attendance of our employees using our existing CCTV system in place.",
+    name: "Qi Ventures",
+    title: "Corporate Office",
   },
   {
-    Icon: SiGrubhub,
-    description:
-      "Khan Academy's dedication to education is unparalleled. They've helped us scale our offerings to new heights.",
-    name: "Sal Khan",
-    title: "Founder, Khan Academy",
+    logo: "/api/placeholder/150/50",
+    description: "With the help of Logiclens Video Analytics we are making sure we have eyes, alerts and reports of every hygienic compliances we need to take care which was earlier very difficult.",
+    name: "Osam Dairy",
+    title: "Food Processing Industry",
   },
   {
-    Icon: SiSlack,
-    description:
-      "First Bud Organics is a leader in organic products, and their values align perfectly with ours.",
-    name: "Samantha Green",
-    title: "Marketing Lead, First Bud Organics",
-  },
-  {
-    Icon: SiKaggle,
-    description:
-      "Reteation Tea has redefined what premium tea should be. Their attention to quality is exceptional.",
-    name: "James Smith",
-    title: "Product Developer, Reteation Tea",
+    logo: "/api/placeholder/150/50",
+    description: "We are able to monitor the unauthorised entry of people and also our produced product count. We have reduced theft significantly.",
+    name: "Reteation Tea",
+    title: "Tea Manufacturing Industry",
   },
 ];

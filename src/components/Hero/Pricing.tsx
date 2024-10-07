@@ -51,7 +51,7 @@ export const DarkGradientPricing = () => {
             }
             benefits={[
               { text: "Up to 5 Cameras", checked: true },
-              { text: "Simple Detections (e.g., Object Detection)", checked: true },
+              { text: "Advanced Detections", checked: true },
               { text: "Basic Reporting", checked: true },
               { text: "Priority Support", checked: false },
               { text: "Advanced Analytics", checked: false },
@@ -71,7 +71,6 @@ export const DarkGradientPricing = () => {
               { text: "Full Analytics and Reporting", checked: true },
               { text: "Priority Support", checked: true },
               { text: "Custom Integrations", checked: true },
-              { text: "No Trial", checked: true },
             ]}
           />
         </div>

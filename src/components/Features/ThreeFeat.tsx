@@ -184,6 +184,14 @@ const ExampleContent = ({ industry }: { industry: string }) => {
     "custom requirements": "Logiclens offers tailored video analytics solutions designed to meet the specific needs of diverse industries and unique operational challenges. Our customizable AI-powered technology can detect a wide range of behaviors, such as loitering, crowd formation, and unusual movement patterns, providing actionable insights for specialized scenarios. Whether it's monitoring restricted areas, identifying suspicious activities, or ensuring compliance with industry-specific safety protocols, our solutions are adaptable to various environments, including factories, retail, offices, and warehouses. We collaborate closely with our clients to develop custom detection models for special use cases like PPE compliance, occupancy management, or customer behavior analysis. With Logiclens, organizations can leverage intelligent surveillance to enhance security, operational efficiency, and decision-making, transforming their video data into a powerful tool for addressing specific needs and driving business success.",
     "societies":"Logiclens provides advanced video analytics solutions specifically designed for buildings and societies, enhancing both security and operational efficiency. Our AI-driven technology monitors activities in real-time, detecting security threats such as unauthorized access, vandalism, and other suspicious behaviors. Beyond security, our solution streamlines building management by tracking foot traffic, monitoring access points, track entry and exit of vehicles and ensuring compliance with safety protocols. With features like real-time alerts and detailed analytics reports, facility managers can proactively address issues, minimize risks, and enhance overall safety. By integrating seamlessly with existing IP CCTV systems, Logiclens offers a scalable, cost-effective solution that transforms traditional surveillance into a powerful tool for safeguarding assets and improving community well-being."
   };
+  const introContent: { [key: string]: string } = {
+    factories: "Enhance your factory's security and efficiency with our AI-powered CCTV solutions. Monitor production lines, detect anomalies, and ensure safety compliance in real-time.",
+    "retail outlets": "Revolutionize your retail security and customer insights with our smart surveillance. Prevent theft, analyze foot traffic, and optimize store layout for better customer experiences.",
+    offices: "Transform your office security and space management with our intelligent monitoring systems. Detect unauthorized access, optimize workspace utilization, and ensure a safe work environment.",
+    warehouses: "Streamline your warehouse operations and security with our advanced CCTV analytics. Track inventory, monitor loading processes, and prevent theft with real-time alerts.",
+    "custom requirements": "Get a tailor-made surveillance solution for your unique business needs. Our customizable AI technology adapts to your specific security and operational challenges.",
+    societies: "Elevate community safety and management with our smart surveillance for societies. Monitor common areas, track vehicle movement, and ensure resident security with advanced analytics."
+  };
 
   return (
     <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
@@ -191,13 +199,8 @@ const ExampleContent = ({ industry }: { industry: string }) => {
         AI/ML-Powered CCTV Solutions for {industry}
       </h2>
       <div className="col-span-1 md:col-span-8">
-        <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-          We provide cutting-edge security solutions designed for {industry}. 
-          Our AI/ML-powered CCTV systems ensure safety and real-time monitoring with advanced analytics.
-        </p>
         <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-          Whether it&apos;s automating monitoring in factories or ensuring safety in retail outlets, 
-          our solutions are tailored to your unique needs.
+          {introContent[industry]}
         </p>
         {!isExpanded && (
           <button 
