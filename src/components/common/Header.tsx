@@ -104,6 +104,7 @@ const Logo = () => (
 
 const Links = () => (
   <div className="hidden items-center gap-2 md:flex">
+    <img src="https://www.iimlincubator.com/uploads/startups/startup_01-31-2024_1205pmpng.png" alt="logo" className="h-12 w-auto" />
     <GlassLink text="Home" href="/" />
     <GlassLink text="About Us" href="/about" />
     <GlassLink text="Products" href="/products" />

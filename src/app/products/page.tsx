@@ -6,7 +6,7 @@ import WhatsAppFloatButton from '@/components/common/CTAButton'
 const page = () => {
   return (
     <><GridHoverHero/>
-    <h1 className='text-center p-4 text-6xl font-extrabold bg-black'>OUR PRODUCTS</h1>
+    <h1 className='text-center p-4 text-6xl text-white font-extrabold bg-black'>OUR PRODUCTS</h1>
     <OppoScroll/>
     <WhatsAppFloatButton phoneNumber="+917708964718"/></>
   )

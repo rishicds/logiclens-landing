@@ -5,7 +5,7 @@ import { AnimatePresence } from "framer-motion";
 
 export const TextParallaxContentExample = () => {
   return (
-    <div className="bg-black pt-4">
+    <div className="bg-black">
       <h2 className="text-7xl px-4 py-8 text-center font-extrabold text-white">INDUSTRIES WE OFFER</h2>
       <TextParallaxContent
         mediaUrl="https://videos.pexels.com/video-files/4686755/4686755-uhd_2560_1440_24fps.mp4"
@@ -195,8 +195,8 @@ const ExampleContent = ({ industry }: { industry: string }) => {
 
   return (
     <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-      <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
-        AI/ML-Powered CCTV Solutions for {industry}
+      <h2 className="col-span-1 text-3xl font-bold text-neutral-600 md:col-span-4">
+        AI Powered CCTV Solutions for {industry}
       </h2>
       <div className="col-span-1 md:col-span-8">
         <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
@@ -220,7 +220,9 @@ const ExampleContent = ({ industry }: { industry: string }) => {
               transition={{ duration: 0.3 }}
               className="mt-4 overflow-hidden flex flex-col"
             >
-              <p className="text-neutral-600 text-2xl mb-4">{popupContent[industry]}</p>
+              <p className="text-neutral-600 text-2xl w-[40rem] mb-4 text-justify mx-auto">
+  {popupContent[industry]}
+</p>
               <button 
                 onClick={() => setIsExpanded(false)} 
                 className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit flex items-center justify-between self-start"

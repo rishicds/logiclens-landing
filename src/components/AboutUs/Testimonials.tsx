@@ -162,25 +162,25 @@ interface Testimonial {
 
 const testimonials = [
   {
-    logo: "images/minsu.jpg",
+    logo: "https://minsulate.com/assets/images/logo/minsulate%20logo.png",
     description: "With the help of LogicLens' facial recognition and number plate detection software we are able to monitor the employees and vehicles on our factory helping us solve major issues.",
     name: "Minsulate Manufacturing Company",
-    title: "Manufacturing Industry",
+    title: "Manufacturing Company",
   },
   {
-    logo: "/api/placeholder/150/50",
+    logo: "https://res.cloudinary.com/binarycode/image/upload/v1661862804/Qi%20Venture/0.Logos/Logo_4_QiVentureXOrtigan1_lmaj8w.svg",
     description: "With Logiclens Facial Recognition System we are monitoring the attendance of our employees using our existing CCTV system in place.",
     name: "Qi Ventures",
     title: "Corporate Office",
   },
   {
-    logo: "/api/placeholder/150/50",
+    logo: "https://osamdairy.com/wp-content/uploads/2018/04/logo.png",
     description: "With the help of Logiclens Video Analytics we are making sure we have eyes, alerts and reports of every hygienic compliances we need to take care which was earlier very difficult.",
     name: "Osam Dairy",
-    title: "Food Processing Industry",
+    title: "Food Processing Company",
   },
   {
-    logo: "/api/placeholder/150/50",
+    logo: "https://reteation.com/wp-content/themes/reteation/images/logo.svg",
     description: "We are able to monitor the unauthorised entry of people and also our produced product count. We have reduced theft significantly.",
     name: "Reteation Tea",
     title: "Tea Manufacturing Industry",

@@ -28,7 +28,7 @@ export const DarkGradientPricing = () => {
             tier="Free Trial"
             price="Rs.0"
             bestFor="1 Camera, 1 Use Case"
-            CTA={<GhostButton className="w-full">Start Free Trial</GhostButton>}
+            CTA={<GhostButton className="w-full">Start 30 day Trial</GhostButton>}
             benefits={[
               { text: "1 Camera", checked: true },
               { text: "1 Detection Use Case", checked: true },
@@ -43,14 +43,14 @@ export const DarkGradientPricing = () => {
           <PriceCard
             tier="Out of the Box"
             price="RsXXXX/mo"
-            bestFor="Multi Cams, Simple Detections"
+            bestFor="Multi Cams, Advanced Detections"
             CTA={
               <GhostButton className="w-full bg-zinc-50 text-zinc-950 hover:bg-zinc-200 hover:text-zinc-900">
                 14-Day Free Trial
               </GhostButton>
             }
             benefits={[
-              { text: "Up to 5 Cameras", checked: true },
+              { text: "Up to Fixed Cameras", checked: true },
               { text: "Advanced Detections", checked: true },
               { text: "Basic Reporting", checked: true },
               { text: "Priority Support", checked: false },
@@ -67,10 +67,11 @@ export const DarkGradientPricing = () => {
             CTA={<GhostButton className="w-full">Contact Us</GhostButton>}
             benefits={[
               { text: "Unlimited Cameras", checked: true },
-              { text: "Advanced Detections (e.g., Facial Recognition)", checked: true },
+              { text: "Advanced Detections", checked: true },
               { text: "Full Analytics and Reporting", checked: true },
               { text: "Priority Support", checked: true },
               { text: "Custom Integrations", checked: true },
+              { text: "Onsite Support", checked: true },
             ]}
           />
         </div>

@@ -1,5 +1,6 @@
 import React, { MouseEventHandler, useEffect, useState } from "react";
 import { useAnimate } from "framer-motion";
+import Link from "next/link";
 
 export const GridHoverHero = () => {
   const [scope, animate] = useAnimate();
@@ -58,9 +59,11 @@ export const GridHoverHero = () => {
         <p className="mb-6 mt-4 max-w-3xl text-center text-3xl font-bold text-neutral-500 md:text-3xl ">
           Explore world class products and deploy them in your business with Logiclens.
         </p>
+        <Link href="/contact">
         <button className="pointer-events-auto bg-indigo-400 px-4 py-2 text-xl font-bold uppercase text-neutral-950 mix-blend-difference">
           Contact Us
         </button>
+        </Link>
       </div>
     </div>
   );
