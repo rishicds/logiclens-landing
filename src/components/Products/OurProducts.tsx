@@ -40,6 +40,7 @@ const Content = ({ content }: { content: typeof items }) => {
             ))}
           </ul>
           <p className="font-light w-full text-2xl mb-4">{description}</p>
+          
         </div>
       ))}
     </div>
@@ -67,7 +68,7 @@ const Videos = ({
             <iframe
               width="100%"
               height="100%"
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&playsinline=1&origin=${window.location.origin}`}
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1`}
               title={title}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -144,7 +145,7 @@ const items = [
     features: [
       "Analyze customer clothing preferences for marketing",
       "Monitor clothing trends over time for inventory planning",
-      "Personalized experience based on detected clothing",
+      "Personalized shopping experience based on detected clothing",
       "Gather market research for brand positioning",
     ],
   },
