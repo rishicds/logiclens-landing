@@ -50,7 +50,7 @@ export const DarkGradientPricing = () => {
               </GhostButton>
             }
             benefits={[
-              { text: "Up to Fixed Cameras", checked: true },
+              { text: "Fixed Cameras", checked: true },
               { text: "Advanced Detections", checked: true },
               { text: "Basic Reporting", checked: true },
               { text: "Priority Support", checked: false },

@@ -26,14 +26,15 @@ const Footer = () => {
             +91 77089 64718
           </a>
         </p>
-        <span className="block mt-4 text-sm text-gray-700 dark:text-gray-200">
-          Email us at {"sales.logiclens@gmail.com"}
-          <a
-            href="mailto:sales.logiclens@gmail.com"
-            className="text-gray-900 dark:text-white"
-          >
-          </a>
-        </span>
+        <span className="block mt-4 text-xl text-gray-700 dark:text-gray-200">
+  Email us at{" "}
+  <a
+    href="mailto:sales@logiclens.co.in"
+    className="text-gray-900 hover:text-gray-800 dark:text-white dark:hover:text-gray-300"
+  >
+    sales@logiclens.co.in
+  </a>
+</span>
 
 
         <ul className="mt-8 space-y-1 text-sm text-gray-700 dark:text-gray-200">
@@ -45,7 +46,7 @@ const Footer = () => {
 
           <li>
             <a
-              href="#"
+              href="https://www.instagram.com/logiclenssolutions?igsh=MWNxY3NsdDF6c2lpMA=="
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
@@ -64,7 +65,7 @@ const Footer = () => {
 
           <li>
             <a
-              href="#"
+              href="https://x.com/logiclens?s=11"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
@@ -82,23 +83,25 @@ const Footer = () => {
           
 
           <li>
-            <a
-              href="#"
-              rel="noreferrer"
-              target="_blank"
-              className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
-            >
-              <span className="sr-only">LinkedIn</span>
+  <a
+    href="https://www.linkedin.com/company/logiclens/?viewAsMember=true"
+    rel="noreferrer"
+    target="_blank"
+    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+  >
+    <span className="sr-only">LinkedIn</span>
 
-              <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  d="M2 3a1 1 0 011-1h18a1 1 0 011 1v18a1 1 0 01-1 1H3a1 1 0 01-1-1V3zm9 2a3 3 0 100 6 3 3 0 000-6zm-2 6h4v8h-4v-8z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
-          </li>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.58c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zM20.45 20.45h-3.56v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.97v5.69h-3.56V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24z" />
+    </svg>
+  </a>
+</li>
         </ul>
       </div>
 

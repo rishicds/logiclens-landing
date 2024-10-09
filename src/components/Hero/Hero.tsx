@@ -8,6 +8,7 @@ export function AuroraHero() {
   const [text, setText] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
   const phrases = [
     "Leverage the power of AI to redefine your security",
     "Enhance your security with cutting-edge AI",
@@ -42,6 +43,14 @@ export function AuroraHero() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [charIndex, phraseIndex]);
 
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 530);
+
+    return () => clearInterval(cursorInterval);
+  }, []);
+
   return (
     <motion.div ref={containerRef} className="min-h-[100vh] flex items-start justify-center pt-20">
       <WavyBackground className="max-w-4xl mx-auto mb-40 sticky top-20">
@@ -72,17 +81,18 @@ export function AuroraHero() {
               </motion.span>
             ))}
           </div>
-          <motion.p
-            className="text-xl md:text-2xl text-white font-normal inter-var text-center h-16"
+          <motion.div
+            className="text-xl md:text-2xl text-green-400 font-mono text-center h-16 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
             style={{
-              textShadow: "0 0 8px rgba(255, 255, 255, 0.5)",
+              textShadow: "0 0 8px rgba(74, 222, 128, 0.5)",
             }}
           >
-            {text}
-          </motion.p>
+            <span>{text}</span>
+            {showCursor && <span className="animate-blink">|</span>}
+          </motion.div>
         </motion.div>
       </WavyBackground>
     </motion.div>
