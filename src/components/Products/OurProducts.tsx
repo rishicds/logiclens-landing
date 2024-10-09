@@ -135,7 +135,7 @@ const items: ContentItem[] = [
   },
   {
     id: 4,
-    title: "Custom Behavior Detection",
+    title: "Custom Activity Detection",
     description:
       "Detect specific behaviors such as suspicious activity, retail loss prevention, employee productivity, or emergency response activation, tailored to your needs.",
     videoSrc: "custom.mp4",
