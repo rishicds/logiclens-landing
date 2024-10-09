@@ -8,7 +8,7 @@ const OppoScroll: React.FC = () => {
   });
 
   return (
-    <section ref={targetRef} className="flex flex-col md:flex-row bg-black text-white">
+    <section ref={targetRef} className="flex flex-col md:flex-row z-50 bg-black text-white">
       <Content content={items} />
       <Videos content={items} scrollYProgress={scrollYProgress} />
     </section>
@@ -29,7 +29,7 @@ const Content: React.FC<{ content: ContentItem[] }> = ({ content }) => {
       {content.map(({ id, title, description, features, videoSrc }, idx) => (
         <div
           key={id}
-          className={`p-8 md:h-screen flex flex-col justify-between ${
+          className={`p-8 md:h-screen z-100 flex flex-col justify-between ${
             idx % 2 ? "bg-white text-black" : "bg-black text-white"
           }`}
         >

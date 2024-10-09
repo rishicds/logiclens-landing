@@ -1,10 +1,10 @@
 import React, { MouseEventHandler, useEffect, useState } from "react";
 import { useAnimate } from "framer-motion";
 import Link from "next/link";
+import { Typewriter } from 'react-simple-typewriter';
 
 export const GridHoverHero = () => {
   const [scope, animate] = useAnimate();
-
   const [size, setSize] = useState({ columns: 0, rows: 0 });
 
   useEffect(() => {
@@ -53,16 +53,29 @@ export const GridHoverHero = () => {
         ))}
       </div>
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-8">
+        {/* Static Heading */}
         <h1 className="text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase text-white">
           OUR SOLUTIONS
         </h1>
+
+        {/* Typewriter effect for the subtitle */}
         <p className="mb-6 mt-4 max-w-3xl text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-neutral-500">
-          Explore world class products and deploy them in your business with Logiclens.
+          <Typewriter
+            words={['Explore world-class products and deploy them in your business with Logiclens.']}
+            loop={1}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
         </p>
+
+        {/* Contact Us Button */}
         <Link href="/contact">
-        <button className="pointer-events-auto bg-indigo-400 px-4 py-2 text-base sm:text-xl font-bold uppercase text-neutral-950 mix-blend-difference">
-          Contact Us
-        </button>
+          <button className="pointer-events-auto bg-indigo-400 px-4 py-2 text-base sm:text-xl font-bold uppercase text-neutral-950 mix-blend-difference">
+            Contact Us
+          </button>
         </Link>
       </div>
     </div>

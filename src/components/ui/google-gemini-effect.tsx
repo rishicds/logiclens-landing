@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { motion, MotionValue } from "framer-motion";
 import React from "react";
+import Link from "next/link";
 
 const transition = {
   duration: 0,
@@ -28,10 +29,12 @@ export const GoogleGeminiEffect = ({
         {description ||
           `Mordernise your security with custom AI Powered Features!`}
       </p>
-      <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
+      <div className="w-full h-[890px] -top-60 md:-top-40  z-50 flex items-center justify-center bg-red-transparent absolute ">
+        <Link href="/contact">
         <button className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-3xl text-black text-2xl  w-fit mx-auto ">
           Contact Us
         </button>
+        </Link>
       </div>
       <svg
         width="1440"

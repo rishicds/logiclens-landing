@@ -2,7 +2,7 @@ import React, { ReactNode, CSSProperties } from "react";
 import { FiCheck, FiX } from "react-icons/fi";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 export const DarkGradientPricing = () => {
   return (
     <section
@@ -28,7 +28,7 @@ export const DarkGradientPricing = () => {
             tier="Free Trial"
             price="Rs.0"
             bestFor="1 Camera, 1 Use Case"
-            CTA={<GhostButton className="w-full">Start 30 day Trial</GhostButton>}
+            CTA={<GhostButton className="w-full bg-zinc-50 text-zinc-950 hover:bg-zinc-200 hover:text-zinc-900">Start 30 day Trial</GhostButton>}
             benefits={[
               { text: "1 Camera", checked: true },
               { text: "1 Detection Use Case", checked: true },
@@ -42,7 +42,7 @@ export const DarkGradientPricing = () => {
           {/* Out of the Box */}
           <PriceCard
             tier="Out of the Box"
-            price="RsXXXX/mo"
+            price="RsXXXX/yr"
             bestFor="Multi Cams, Advanced Detections"
             CTA={
               <GhostButton className="w-full bg-zinc-50 text-zinc-950 hover:bg-zinc-200 hover:text-zinc-900">
@@ -64,7 +64,7 @@ export const DarkGradientPricing = () => {
             tier="Custom Solution"
             price="Contact Us"
             bestFor="Advanced Detections, Large Setup"
-            CTA={<GhostButton className="w-full">Contact Us</GhostButton>}
+            CTA={<Link href="/contact"><GhostButton className="w-full bg-zinc-50 text-zinc-950 hover:bg-zinc-200 hover:text-zinc-900">Contact Us</GhostButton></Link>}
             benefits={[
               { text: "Unlimited Cameras", checked: true },
               { text: "Advanced Detections", checked: true },

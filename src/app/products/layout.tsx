@@ -1,9 +1,7 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import "../globals.css";
 import Navbar from "@/components/common/Header";
-
-
 
 export default function RootLayout({
   children,
@@ -15,11 +13,15 @@ export default function RootLayout({
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
+
     if (currentScrollY > lastScrollY) {
+      // Hide navbar instantly on scroll down
       setShowNavbar(false);
-    } else {
+    } else if (currentScrollY === 0) {
+      // Show navbar only when user has scrolled back to the top
       setShowNavbar(true);
     }
+
     setLastScrollY(currentScrollY);
   };
 
@@ -28,7 +30,6 @@ export default function RootLayout({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastScrollY]);
 
   return (
@@ -36,7 +37,6 @@ export default function RootLayout({
       <body>
         {showNavbar && <Navbar />}
         {children}
-        
       </body>
     </html>
   );
