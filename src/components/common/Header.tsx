@@ -97,8 +97,8 @@ const Cursor = ({
 };
 
 const Logo = () => (
-  <span className="pointer-events-none relative left-0 top-[50%] z-10 text-4xl font-black font-sans text-white mix-blend-overlay md:absolute md:left-[50%] md:-translate-x-[50%] md:-translate-y-[50%]">
-    
+  <span className="pointer-events-none relative left-0 top-[50%] z-10 text-4xl font-black font-sans text-white mix-blend-overlay block md:hidden">
+    <img src="https://www.iimlincubator.com/uploads/startups/startup_01-31-2024_1205pmpng.png" alt="logo" className="h-12 w-auto" />
   </span>
 );
 
@@ -128,13 +128,7 @@ const GlassLink = ({ text, href }: { text: string; href: string }) => {
 };
 
 
-const TextLink = ({ text }: { text: string }) => {
-  return (
-    <a href="#" className="text-white/90 transition-colors hover:text-white">
-      {text}
-    </a>
-  );
-};
+
 
 const Buttons = ({
   setMenuOpen,
@@ -183,12 +177,17 @@ const MobileMenu = ({ menuOpen }: { menuOpen: boolean }) => {
       }}
       className="block overflow-hidden md:hidden"
     >
+      
       <div ref={ref} className="flex items-center justify-between px-4 pb-4">
+        
         <div className="flex items-center gap-4">
-          <TextLink text="Products" />
-          <TextLink text="About Us" />
-          <TextLink text="Contact" />
+        
+        <GlassLink text="Home" href="/" />
+    <GlassLink text="About" href="/about" />
+    <GlassLink text="Products" href="/products" />
+    <GlassLink text="Contact" href="/contact" />
         </div>
+        
         <SignInButton />
       </div>
     </motion.div>

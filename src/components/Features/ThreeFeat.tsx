@@ -6,7 +6,9 @@ import { AnimatePresence } from "framer-motion";
 export const TextParallaxContentExample = () => {
   return (
     <div className="bg-black">
-      <h2 className="text-7xl px-4 py-8 text-center font-extrabold text-white">INDUSTRIES WE OFFER</h2>
+      <h2 className="text-4xl lg:text-7xl py-8 text-center font-extrabold text-white">
+  INDUSTRIES WE OFFER
+</h2>
       <TextParallaxContent
         mediaUrl="https://videos.pexels.com/video-files/4686755/4686755-uhd_2560_1440_24fps.mp4"
         mediaType="video"

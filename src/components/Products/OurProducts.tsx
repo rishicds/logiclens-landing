@@ -8,18 +8,10 @@ const OppoScroll: React.FC = () => {
   });
 
   return (
-    <>
-      <div className="bg-black text-black p-4 grid place-items-center">
-        <h1 className="text-4xl font-bold">Our Products</h1>
-      </div>
-      <section ref={targetRef} className="flex bg-black text-white">
-        <Content content={items} />
-        <Videos content={items} scrollYProgress={scrollYProgress} />
-      </section>
-      <div className="bg-black text-white p-4 grid place-items-center">
-        <h2 className="text-2xl">Enhancing Security and Efficiency</h2>
-      </div>
-    </>
+    <section ref={targetRef} className="flex flex-col md:flex-row bg-black text-white">
+      <Content content={items} />
+      <Videos content={items} scrollYProgress={scrollYProgress} />
+    </section>
   );
 };
 
@@ -34,20 +26,34 @@ interface ContentItem {
 const Content: React.FC<{ content: ContentItem[] }> = ({ content }) => {
   return (
     <div className="w-full">
-      {content.map(({ id, title, description, features }, idx) => (
+      {content.map(({ id, title, description, features, videoSrc }, idx) => (
         <div
           key={id}
-          className={`p-8 h-screen flex flex-col justify-between ${
+          className={`p-8 md:h-screen flex flex-col justify-between ${
             idx % 2 ? "bg-white text-black" : "bg-black text-white"
           }`}
         >
-          <h3 className="text-6xl font-medium">{title}</h3>
-          <ul className="list-disc list-inside text-2xl">
-            {features.map((feature, featureIdx) => (
-              <li className="" key={featureIdx}>{feature}</li>
-            ))}
-          </ul>
-          <p className="font-light w-full text-2xl mb-4">{description}</p>
+          <h3 className="text-4xl md:text-6xl font-medium">{title}</h3>
+          <ul className="space-y-2 text-lg md:text-2xl my-4">
+  {features.map((feature, featureIdx) => (
+    <li key={featureIdx} className="flex">
+      <span className="mr-2 flex-shrink-0">•</span>
+      <span>{feature}</span>
+    </li>
+  ))}
+</ul>
+          <p className="font-light w-full text-lg md:text-2xl mb-4">{description}</p>
+          <div className="md:hidden w-full h-64 my-4">
+            <video
+              className="w-full h-full object-cover"
+              src={videoSrc}
+              title={title}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </div>
         </div>
       ))}
     </div>
@@ -67,7 +73,7 @@ const Videos: React.FC<VideosProps> = ({ content, scrollYProgress }) => {
   );
 
   return (
-    <div className="h-screen overflow-hidden sticky top-0 w-24 md:w-full">
+    <div className="hidden md:block h-screen overflow-hidden sticky top-0 w-full">
       <motion.div style={{ top }} className="absolute left-0 right-0">
         {[...content].reverse().map(({ videoSrc, id, title }) => (
           <div key={id} className="h-screen w-full">
