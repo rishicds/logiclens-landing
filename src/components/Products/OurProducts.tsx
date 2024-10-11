@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 
 const OppoScroll: React.FC = () => {
@@ -35,24 +35,16 @@ const Content: React.FC<{ content: ContentItem[] }> = ({ content }) => {
         >
           <h3 className="text-4xl md:text-6xl font-medium">{title}</h3>
           <ul className="space-y-2 text-lg md:text-2xl my-4">
-  {features.map((feature, featureIdx) => (
-    <li key={featureIdx} className="flex">
-      <span className="mr-2 flex-shrink-0">•</span>
-      <span>{feature}</span>
-    </li>
-  ))}
-</ul>
+            {features.map((feature, featureIdx) => (
+              <li key={featureIdx} className="flex">
+                <span className="mr-2 flex-shrink-0">•</span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
           <p className="font-light w-full text-lg md:text-2xl mb-4">{description}</p>
           <div className="md:hidden w-full h-64 my-4">
-            <video
-              className="w-full h-full object-cover"
-              src={videoSrc}
-              title={title}
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
+            <ResponsiveVideo src={videoSrc} title={title} />
           </div>
         </div>
       ))}
@@ -77,19 +69,32 @@ const Videos: React.FC<VideosProps> = ({ content, scrollYProgress }) => {
       <motion.div style={{ top }} className="absolute left-0 right-0">
         {[...content].reverse().map(({ videoSrc, id, title }) => (
           <div key={id} className="h-screen w-full">
-            <video
-              className="w-full h-full object-cover"
-              src={videoSrc}
-              title={title}
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
+            <ResponsiveVideo src={videoSrc} title={title} />
           </div>
         ))}
       </motion.div>
     </div>
+  );
+};
+
+const ResponsiveVideo: React.FC<{ src: string; title: string }> = ({ src, title }) => {
+  const [videoError, setVideoError] = useState(false);
+
+  return videoError ? (
+    <div className="w-full h-full flex items-center justify-center bg-gray-300">
+      <p>Video failed to load.</p>
+    </div>
+  ) : (
+    <video
+      className="w-full h-full object-cover"
+      src={src}
+      title={title}
+      autoPlay
+      muted
+      loop
+      playsInline
+      onError={() => setVideoError(true)}
+    />
   );
 };
 
