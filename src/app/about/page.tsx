@@ -4,11 +4,14 @@ import { Awards } from '@/components/AboutUs/Awards'
 import { OurCompany } from '@/components/AboutUs/OurCompany'
 import StackedCardTestimonials from '@/components/AboutUs/Testimonials'
 import WhatsAppFloatButton from '@/components/common/CTAButton'
+import Footer from '@/components/common/Footer'
+import Navbar from '@/components/common/Header'
 import React from 'react'
 
 const page = () => {
   return (
     <>
+    <Navbar/>
     <AboutHero/>
     <OurCompany/>
     <h1 className='text-6xl text-center font-extrabold p-8'> Awards and Certifications</h1>
@@ -18,6 +21,7 @@ const page = () => {
     </div>
     <h1 className='text-6xl text-center font-extrabold p-8'> Our Clients</h1>
     <StackedCardTestimonials/>
+    <Footer/>
     </>
   )
 }

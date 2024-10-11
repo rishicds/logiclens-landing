@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/common/Header";
-import Footer from "@/components/common/Footer";
+
 
 export const metadata: Metadata = {
   title: "LogicLens",
@@ -16,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
+       
         {children}
-        <Footer/>
+        
         
       </body>
     </html>
